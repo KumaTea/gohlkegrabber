@@ -78,7 +78,7 @@ class GohlkeGrabber:
         When created, the GohlkeGrabber downloads the listed packages on https://www.lfd.uci.edu/~gohlke/pythonlibs
         :param cached: when provided, index will be loaded from this file if it exists, or written to it after download
         """
-        self.index_root = 'https://www.lfd.uci.edu/~gohlke/pythonlibs'
+        self.index_root = 'https://www.lfd.uci.edu/~gohlke/pythonlibs/'
         self.download_root = 'https://download.lfd.uci.edu/pythonlibs/'
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
