@@ -50,11 +50,14 @@ def version_compare(v1: str, compare_operator, v2: str = None):
     v1 = v1.split('.')
     v2 = v2.split('.')
 
-    for p1, p2 in zip_longest(v1, v2, fillvalue='0'):
-        if _compare_version_parts(op, p1, p2) and compare_operator != '==':
-            return True
-        elif p1 != p2:
-            return False
+    try:
+        for p1, p2 in zip_longest(v1, v2, fillvalue='0'):
+            if _compare_version_parts(op, p1, p2) and compare_operator != '==':
+                return True
+            elif p1 != p2:
+                return False
+    except ValueError:
+        return False
 
     return compare_operator in ['==', '>=', '<=']
 
